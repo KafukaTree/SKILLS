@@ -169,7 +169,7 @@ outside this list is rework:
 2. Enable: `omp config set browser.relay true`
 3. Have the user load the extension once in Chrome:
    `chrome://extensions` → Developer mode → "Load unpacked" →
-   `C:\Users\98187\.omp\browser-relay\extension` (badge shows **on**).
+   `C:\Users\<用户名>\.omp\browser-relay\extension` (badge shows **on**).
 4. Verify: `browser` tool `open` with `app: { relay: true }` succeeds.
 
 The user must be logged in to chatgpt.com in that Chrome.
@@ -185,7 +185,7 @@ globalThis.__GRAB_ARGS = {
   outDir: 'C:/tmp/chatgpt_export',                     // export root dir
 };
 const grabber = fs.readFileSync(
-  'C:/Users/98187/.omp/agent/skills/chatgpt-conversation-export/scripts/grab.mjs', 'utf8');
+  'C:/Users/<用户名>/.omp/agent/skills/chatgpt-conversation-export/scripts/grab.mjs', 'utf8');
 const summary = await eval(grabber);
 summary;
 ```
@@ -215,7 +215,7 @@ Verify from that file on disk — never from the run's output.
 ### Step 2 — Render Markdown + HTML
 
 ```bash
-node C:/Users/98187/.omp/agent/skills/chatgpt-conversation-export/scripts/convert.mjs \
+node C:/Users/<用户名>/.omp/agent/skills/chatgpt-conversation-export/scripts/convert.mjs \
   C:/tmp/chatgpt_export/raws/6a78b41e-…/6a78b41e-….json C:/tmp/chatgpt_export '<对话URL>'
 ```
 
